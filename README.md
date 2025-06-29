@@ -2,7 +2,8 @@
 
 # Production-Ready Code & Infrastructure:
 
-# 1. Project Structure
+### 1. Project Structure
+'''
 stock_prediction_agent/
 ├── model/
 │   ├── stock_prediction_lstm_model.h5
@@ -10,8 +11,9 @@ stock_prediction_agent/
 ├── app.py                  # Flask API for predictions
 ├── requirements.txt        # Python dependencies
 └── Dockerfile              # Instructions to build Docker image
+'''
 
-# 2. Key Python Libraries
+### 2. Key Python Libraries
 # (In requirements.txt)
 # Flask
 # tensorflow
