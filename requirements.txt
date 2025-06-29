@@ -1,0 +1,7 @@
+Flask
+tensorflow==2.16.1 # Use the exact version you trained with
+scikit-learn
+pandas
+numpy
+yfinance
+gunicorn # For production web server
