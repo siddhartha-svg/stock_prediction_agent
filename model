@@ -1,1 +1,38 @@
+import tensorflow as tf
+import joblib
+import pandas as pd # Assuming stock_df is available from previous steps
+from sklearn.preprocessing import MinMaxScaler
+import numpy as np
 
+# --- Re-run the preprocessing and training if you haven't already ---
+# This ensures you have the 'model' and 'scaler' objects
+# Assuming 'stock_df' is already loaded from Step 1's get_stock_data
+# and 'look_back' is defined (e.g., look_back = 60)
+
+# If you're running this as a standalone script for saving:
+# You'll need to load stock_df first
+# ticker = "AAPL"
+# start_date = "2010-01-01"
+# end_date = "2025-06-27"
+# stock_df = yf.download(ticker, start=start_date, end=end_date)
+# X, y, scaler = preprocess_data(stock_df, look_back)
+# model = build_lstm_model(input_shape=(X_train.shape[1], 1)) # X_train from preprocessing
+# model.fit(X_train, y_train, epochs=25, batch_size=32, validation_data=(X_test, y_test), verbose=0)
+# --- End of re-run setup ---
+
+# Define paths for saving
+model_path = 'model/stock_prediction_lstm_model.h5'
+scaler_path = 'model/stock_scaler.pkl'
+
+# Create a directory for your model artifacts if it doesn't exist
+import os
+if not os.path.exists('model'):
+    os.makedirs('model')
+
+# Save the Keras model
+model.save(model_path)
+print(f"Model saved to {model_path}")
+
+# Save the MinMaxScaler
+joblib.dump(scaler, scaler_path)
+print(f"Scaler saved to {scaler_path}")
