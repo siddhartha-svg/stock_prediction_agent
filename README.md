@@ -41,7 +41,7 @@ The Flask API will now be running at `http://localhost:5000`. You can send predi
 
 The repository is organized for clarity and maintainability.
 
-'''
+```
 stock_prediction_agent/
 ├── model/
 │   ├── stock_prediction_lstm_model.h5   # The trained Keras LSTM model
@@ -49,7 +49,7 @@ stock_prediction_agent/
 ├── app.py                              # Flask API for serving predictions
 ├── requirements.txt                    # Python dependencies
 └── Dockerfile                          # Instructions to build the Docker image
-'''
+```
 
 
 
